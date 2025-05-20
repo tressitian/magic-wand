@@ -1,48 +1,48 @@
 # TECHIN515 Magic Wand
 
-## 项目简介
-本项目为 TECHIN515 课程的 Magic Wand 手势识别系统，包括数据采集、模型训练、硬件设计等内容。
+## Project Introduction
+This project is for the TECHIN515 course and implements a Magic Wand gesture recognition system, including data collection, model training, and hardware design.
 
-## 目录结构
+## Directory Structure
 ```
 TECHIN515-magic-wand/
 ├── src/
-│   ├── sketches/               # Edge Impulse 导出和注释草图
-│   ├── python-scripts/         # 数据采集与处理脚本
-│   └── dataset/                # 采集的数据集
-├── docs/                      # 文档材料
-├── media/                     # 演示视频等
-├── enclosure/                 # 外壳设计文件与说明
+│   ├── sketches/               # Edge Impulse exports and sketches with comments
+│   ├── python-scripts/         # Python scripts for data collection and processing
+│   └── dataset/                # Collected datasets
+├── docs/                      # Documentation materials
+├── media/                     # Demo videos, etc.
+├── enclosure/                 # Enclosure design files and notes
 │   ├── final-enclosure-images/
 │   └── notes.md
-├── README.md                  # 项目说明
-└── .gitignore                 # 忽略文件配置
+├── README.md                  # Project instructions
+└── .gitignore                 # Ignore file configuration
 ```
 
-## 安装依赖
-建议使用 Python 3.7 及以上版本。
+## Install Dependencies
+Python 3.7 or above is recommended.
 
 ```bash
 pip install pyserial
 ```
 
-## 数据采集脚本运行方法
+## How to Run the Data Collection Script
 
-1. 确保 ESP32 已连接电脑。
-2. 运行脚本（自动检测串口）：
+1. Make sure your ESP32 is connected to your computer.
+2. Run the script (auto-detect serial port):
    ```bash
    python src/python-scripts/gesture_capture/process_gesture_data.py
    ```
-3. 如需指定串口、手势名、采集者名等参数：
+3. To specify serial port, gesture name, and person name:
    ```bash
    python src/python-scripts/gesture_capture/process_gesture_data.py --port /dev/cu.SLAB_USBtoUART --gesture wave --person alice
    ```
-4. 列出可用串口：
+4. To list available serial ports:
    ```bash
    python src/python-scripts/gesture_capture/process_gesture_data.py --list-ports
    ```
 
-## 其他说明
-- 采集的数据会自动保存在 `data/gesture/` 目录下。
-- 外壳设计、材料说明等请见 `enclosure/notes.md`。
-- 详细报告与演示视频请见 `docs/` 和 `media/` 目录。 
+## Additional Notes
+- Collected data will be automatically saved in the `data/gesture/` directory.
+- For enclosure design and material notes, see `enclosure/notes.md`.
+- For detailed reports and demo videos, see the `docs/` and `media/` directories. 
